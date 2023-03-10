@@ -1,0 +1,73 @@
+{
+  "name": "onestop",
+  "version": "0.2.0",
+  "description": "Application for shopping",
+  "private": true,
+  "engines": {
+    "node": "14.17.3"
+  },
+  "build": {
+    "appId": "onestop",
+    "productName": "onestop",
+    "win": {
+      "publish": [
+        "github"
+      ]
+    },
+    "files": [
+      "dist",
+      "node_modules",
+      "package.json"
+    ],
+    "mac": {
+      "target": {
+        "target": "default",
+        "arch": [
+          "arm64",
+          "x64"
+        ]
+      },
+      "type": "distribution",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false
+    },
+    "directories": {
+      "output": "build"
+    }
+  },
+  "main": "./electron/electron.ts",
+  "author": "unplatforms",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Yahwanth-Unplatforms/electron-test.git"
+  },
+  "publish": {
+    "provider": "github",
+    "releaseType": "release"
+  },
+  "scripts": {
+    "start": "concurrently \"wsrun --parallel start\""
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "wsrun": "^5.2.4"
+  },
+  "dependencies": {
+    "typescript": "^4.9.5"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
