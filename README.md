@@ -1,0 +1,1 @@
+# electorn-react-module-federation
